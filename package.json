@@ -1,0 +1,26 @@
+{
+  "name": "redux-control-flow",
+  "version": "1.0.0",
+  "description": "Control flow components for React",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samuelneff/redux-control-flow.git"
+  },
+  "keywords": [
+    "react",
+    "control-flow",
+    "components"
+  ],
+  "author": "Samuel Neff <sam@serndesign.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/samuelneff/redux-control-flow/issues"
+  },
+  "homepage": "https://github.com/samuelneff/redux-control-flow#readme"
+}

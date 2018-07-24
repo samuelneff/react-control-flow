@@ -1,4 +1,5 @@
-import React, { StatelessComponent }  from 'react';
+import * as React from 'react';
+import { StatelessComponent } from 'react';
 
 interface Props
 {
@@ -15,7 +16,7 @@ interface Props
 }
 
 const ForEach: StatelessComponent<Props> =
-    props =>
+    (props:Props) =>
     {
         const {items, as = 'item', component, ...childProps} = props;
 

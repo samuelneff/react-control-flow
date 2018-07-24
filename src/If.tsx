@@ -1,4 +1,5 @@
-import React, { StatelessComponent } from 'react';
+import * as React from 'react';
+import { StatelessComponent } from 'react';
 
 interface Props {
     test: boolean;
@@ -6,7 +7,7 @@ interface Props {
 }
 
 const If:StatelessComponent<Props> = ({ test, children }) =>
-    test
+    test && children != undefined
         ? children
         : null;
 

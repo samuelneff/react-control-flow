@@ -1,4 +1,5 @@
-import React, { StatelessComponent } from 'react';
+import * as React from 'react';
+import { StatelessComponent } from 'react';
 
 interface Props {
     test: any;
@@ -8,7 +9,7 @@ interface Props {
 const Switch:StatelessComponent<Props> = ( { test, children }) => {
     const matches = React.Children
                          .toArray(children)
-                         .filter(child => child.props.value == test);
+                         .filter((child:any) => child.props.value == test);
     if (matches.length === 0) {
         return null;
     }

@@ -4,7 +4,15 @@
   "description": "Control flow components for React",
   "main": "index.js",
   "dependencies": {},
-  "devDependencies": {},
+  "devDependencies": {
+    "@types/jest": "^23.3.0",
+    "@types/react": "^16.4.7",
+    "@types/react-dom": "^16.0.6",
+    "jest": "^23.4.1",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "typescript": "^2.9.2"
+  },
   "scripts": {
     "test": "test"
   },

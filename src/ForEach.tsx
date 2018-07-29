@@ -3,6 +3,7 @@ import { StatelessComponent } from 'react';
 
 interface Props
 {
+    [key: string]: any;
     items: any[];
     as?: string;
     component:
@@ -15,7 +16,7 @@ interface Props
         React.ComponentClass<any>;
 }
 
-const ForEach: StatelessComponent<Props> =
+const ForEach: StatelessComponent<Props & any> =
     (props:Props) =>
     {
         const {items, as = 'item', component, ...childProps} = props;
@@ -35,7 +36,7 @@ const ForEach: StatelessComponent<Props> =
                 React.createElement(
                     component,
                     {
-                        key: item.key || index,
+                        key: (item && item.key) || index,
                         index,
                         [as]: item,
                         ...childProps

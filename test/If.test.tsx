@@ -8,7 +8,7 @@ const IfAny:any = If;
 describe('<If />', () => {
 
     testHtml(
-        'empty no test',
+        'empty',
 
         (
             <IfAny />

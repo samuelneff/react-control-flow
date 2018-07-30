@@ -1,4 +1,4 @@
 codecov:
   token: fa126fba-c20c-42f0-b74a-6aabb2d7a8e1
 fixes:
-  - "dist-test/::"
+  - "dist-test/"

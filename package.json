@@ -12,17 +12,18 @@
   "author": "Samuel Neff <sam@serndesign.com>",
   "license": "MIT",
   "scripts": {
-    "build-lib": "node ./node_modules/typescript/bin/tsc --project ./src/tsconfig.json",
+    "build": "node ./node_modules/typescript/bin/tsc --project ./src/tsconfig.json",
     "build-test": "node ./node_modules/typescript/bin/tsc --project ./test/tsconfig.json",
-    "prepublish": "npm run build-lib",
+    "prepublish": "npm run build",
     "pretest": "npm run build-test",
-    "test": "node  ./node_modules/jest/bin/jest.js --coverage=jest.json"
+    "test": "node  ./node_modules/jest/bin/jest.js --config=jest.json"
   },
   "dependencies": {},
   "devDependencies": {
     "@types/jest": "^23.3.0",
     "@types/react": "^16.4.7",
     "@types/react-dom": "^16.0.6",
+    "codecov": "^3.0.4",
     "jest": "^23.4.1",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",

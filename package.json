@@ -1,5 +1,5 @@
 {
-  "name": "redux-control-flow",
+  "name": "react-control-flow",
   "version": "1.0.0",
   "description": "Control flow components for React",
   "main": "index.js",
@@ -14,7 +14,7 @@
     "typescript": "^2.9.2"
   },
   "scripts": {
-    "test": "test"
+    "test": "jest"
   },
   "repository": {
     "type": "git",

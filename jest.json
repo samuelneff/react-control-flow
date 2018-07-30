@@ -1,4 +1,6 @@
 {
+    "coverageDirectory": "./coverage/",
+    "collectCoverage": true,
     "testMatch": [
         "<rootDir>/dist-test/test/*.test.js"
     ]

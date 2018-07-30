@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/redux-control-flow.iml" filepath="$PROJECT_DIR$/.idea/redux-control-flow.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/react-control-flow.iml" filepath="$PROJECT_DIR$/.idea/react-control-flow.iml" />
     </modules>
   </component>
 </project>

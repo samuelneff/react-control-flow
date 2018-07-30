@@ -28,9 +28,18 @@ describe('<ForEach />', () => {
         '');
 
     testHtml(
-        'empty',
+        'undefined items',
         (
-            <ForEachAny />
+            <ForEach items={ undefined }
+                     component={ Item }/>
+        ),
+        '');
+
+    testHtml(
+        'null items',
+        (
+            <ForEach items={ null }
+                     component={ Item }/>
         ),
         '');
 

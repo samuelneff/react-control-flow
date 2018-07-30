@@ -2,7 +2,22 @@
   "name": "react-control-flow",
   "version": "1.0.0",
   "description": "Control flow components for React",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "browser": "dist/index.js",
+  "keywords": [
+    "react",
+    "control-flow",
+    "components"
+  ],
+  "author": "Samuel Neff <sam@serndesign.com>",
+  "license": "MIT",
+  "scripts": {
+    "build-lib": "node ./node_modules/typescript/bin/tsc --project ./src/tsconfig.json",
+    "build-test": "node ./node_modules/typescript/bin/tsc --project ./test/tsconfig.json",
+    "prepublish": "npm run build-lib",
+    "pretest": "npm run build-test",
+    "test": "node  ./node_modules/jest/bin/jest.js --coverage=jest.json"
+  },
   "dependencies": {},
   "devDependencies": {
     "@types/jest": "^23.3.0",
@@ -13,22 +28,23 @@
     "react-dom": "^16.4.1",
     "typescript": "^2.9.2"
   },
-  "scripts": {
-    "test": "jest"
+  "peerDependencies": {
+    "react": "^16.3.0"
   },
+  "files": [
+    "*.md",
+    "dist*",
+    "src*"
+  ],
+  "homepage": "https://github.com/samuelneff/redux-control-flow#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/samuelneff/redux-control-flow.git"
   },
-  "keywords": [
-    "react",
-    "control-flow",
-    "components"
-  ],
-  "author": "Samuel Neff <sam@serndesign.com>",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/samuelneff/redux-control-flow/issues"
   },
-  "homepage": "https://github.com/samuelneff/redux-control-flow#readme"
+  "engines": {
+    "node": ">=0.10.0"
+  }
 }

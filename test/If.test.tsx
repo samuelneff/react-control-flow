@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { testHtml } from './test-util';
-import If from '../src/If';
+import { If } from '../src';
 
 // for testing, we need a reference that allows us to violate the Props contract
 const IfAny:any = If;

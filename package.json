@@ -1,6 +1,6 @@
 {
-  "name": "react-control-flow",
-  "version": "1.0.0",
+  "name": "react-control-flow-components",
+  "version": "1.0.1",
   "description": "Control flow components for React",
   "main": "dist/index.js",
   "browser": "dist/index.js",
@@ -14,7 +14,7 @@
   "scripts": {
     "build": "node ./node_modules/typescript/bin/tsc --project ./src/tsconfig.json",
     "build-test": "node ./node_modules/typescript/bin/tsc --project ./test/tsconfig.json",
-    "prepublish": "npm run build",
+    "prepare": "npm run build",
     "pretest": "npm run build-test",
     "test": "node  ./node_modules/jest/bin/jest.js --config=jest.json"
   },
@@ -34,8 +34,8 @@
   },
   "files": [
     "*.md",
-    "dist*",
-    "src*"
+    "dist/*",
+    "src/*"
   ],
   "homepage": "https://github.com/samuelneff/redux-control-flow#readme",
   "repository": {

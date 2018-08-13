@@ -1,10 +1,13 @@
-# react-control-flow
+# react-control-flow-components
 
 Control flow components for React to make writing JSX more natural.
 
 [![Build Status](https://travis-ci.org/samuelneff/react-control-flow.svg?branch=master)](https://travis-ci.org/samuelneff/react-control-flow)
 
 ```jsx
+import React from 'react';
+import { Case, ForEach, If, Switch } from 'react-control-flow-components';
+
 <If test={ condition }>
     <span>Only if true</span>
 </If>
@@ -27,7 +30,7 @@ Control flow components for React to make writing JSX more natural.
 Install with npm or yarn
 
 ```bash
-npm install --save react-control-flow
+npm install --save react-control-flow-components
 ```
 
 # Documentation
@@ -43,6 +46,7 @@ npm install --save react-control-flow
 `<If />` only has a single attribute, `test` which is the expression to evaluate. When it evaluates to true, the children are rendered. Otherwise the children are not rendered.
 
 Note that children are evaluated by React before being passed to `<If />` so if a variable within the test may be null or undefined, you'l need to check that before accessing the variable in a way that would generate an error. 
+
 ## `<Switch />`
 
 

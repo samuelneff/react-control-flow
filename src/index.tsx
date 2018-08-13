@@ -1,7 +1,7 @@
-import * as Case from './Case';
-import * as ForEach from './ForEach';
-import * as If from './If';
-import * as Switch from './Switch';
+import Case from './Case';
+import ForEach from './ForEach';
+import If from './If';
+import Switch from './Switch';
 
 export {
     Case,

@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { testHtml } from './test-util';
-import Case from '../src/Case';
-import Switch from '../src/Switch';
+import { Case, Switch } from '../src';
 
 // for testing, we need a reference that allows us to violate the Props contract
 const CaseAny:any = Case;

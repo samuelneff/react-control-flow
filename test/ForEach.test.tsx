@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { testHtml } from './test-util';
-import ForEach from '../src/ForEach';
+import { ForEach } from '../src';
 
 // components used in testing
 const Index = ( { index }:any ) => <span className="index">{ index }</span>;

@@ -90,6 +90,9 @@ Prop | Type | Notes
 `keyGen` | `string` or `function` | Optional. Control over the key for each created child. If a `string` is passed, then it is assumed to be a property of each item. If a function is passed, it is called for each item with the item and index as arguments and is expected to return a uniue key.
 *rest* | *any* | Any other props provided to `<ForEach />` are passed through to each `component` instances as-is.
 
+# Examples
+
+See the unit tests under `tests` folder for many usage examples.
 
 # License
 

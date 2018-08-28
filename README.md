@@ -43,9 +43,11 @@ npm install --save react-control-flow-components
 </If>
 ```
 
-`<If />` only has a single attribute, `test` which is the expression to evaluate. When it evaluates to true, the children are rendered. Otherwise the children are not rendered.
+Prop | Type | Notes
+---- | ---- | -----
+`test` | Boolean | The expression to evaluate. Contents are rendered if the expression evaluates to truthy.
 
-Note that children are evaluated by React before being passed to `<If />` so if a variable within the test may be null or undefined, you'l need to check that before accessing the variable in a way that would generate an error. 
+Note that children are evaluated by React before being passed to `<If />` so if a variable within the test may be null or undefined, you'l need to check that before accessing the variable in a way that would generate an error.
 
 ## `<Switch />`
 
@@ -61,9 +63,10 @@ Note that children are evaluated by React before being passed to `<If />` so if 
 </Switch>
 ```
 
-`<Switch />` has a single attribute, `test` which is the expression to evaluate and test each case against.
-
-`<Case />` has a single attribute, `value` which is the value to compare against `test`.
+Component | Prop | Type | Notes
+--------- | ---- | ---- | -----
+`<Switch />` | `test` | *any* | The expression to check each case against.
+`<Case />` | `value` | *any* | The value to compare against `test`.
 
 The first matching case is rendered. If multiple cases match, only the first is rendered and and error is reported to the console.
 
@@ -71,20 +74,22 @@ The first matching case is rendered. If multiple cases match, only the first is 
 
 ```jsx
 <ForEach items={ data }
-         as="item"
          component={ DataView }
-         rest="wahtever I want" />
+         as="item"
+         spread
+         keyGen={(item, index) => index}
+         rest="wahtever I want" />                  
 ```
 
-`<ForEach />` has two required attributes, `items` and `component`. 
+Prop | Type | Notes
+---- | ---- | -----
+`items` | `any[]` | Array of items to pass to the child components
+`component` | *React component* | The component that will be used to render each item in the `items` array.
+`as` | `string` | Optional. Specifies the name of the prop used to pass item to the rendered component. Default is `item`.
+`spread` | `Boolean` | Optional. When specified, instead of the item being passed as a single prop to the rendered component, each entry within the item is passed as a separate prop, similar to `<Component {...item} />`. Note `as` and `spread` are mutually exclusive.
+`keyGen` | `string` or `function` | Optional. Control over the key for each created child. If a `string` is passed, then it is assumed to be a property of each item. If a function is passed, it is called for each item with the item and index as arguments and is expected to return a uniue key.
+*rest* | *any* | Any other props provided to `<ForEach />` are passed through to each `component` instances as-is.
 
-`items` is an array, typically of objects. Each item within the array is passed to the component as a prop.
-
-`as`  is optional and specifies the name of the prop where the individual item is passed to the rendered component. Default is `item`.
-
-`component` is a reference to the component to render for each item.
-
-*rest*. Any other attributes povided to `<ForEach />` are passed through to each `component` instances as-is.
 
 # License
 

@@ -6,6 +6,8 @@ interface Props
     [key: string]: any;
     items: any[];
     as?: string;
+    spread?: boolean;
+    keyGen?: string | ((item: any, index: number) => string);
     component:
         keyof React.ReactHTML |
         keyof React.ReactSVG |
@@ -19,7 +21,13 @@ interface Props
 const ForEach: StatelessComponent<Props & any> =
     (props:Props) =>
     {
-        const {items, as = 'item', component, ...childProps} = props;
+        const {
+          items,
+          as = 'item',
+          spread = false,
+          keyGen = undefined,
+          component,
+          ...childProps} = props;
 
         if (items == null) {
             return null;
@@ -31,14 +39,20 @@ const ForEach: StatelessComponent<Props & any> =
             return null;
         }
 
+        const keyGenImpl = typeof keyGen === 'string'
+          ? (item: any, index: number) => item[keyGen]
+          : typeof keyGen === 'function'
+            ? keyGen
+            : (item: any, index: number) => index;
+
         return items.map(
             (item, index) =>
                 React.createElement(
                     component,
                     {
-                        key: (item && item.key) || index,
+                        key: keyGenImpl(item, index),
                         index,
-                        [as]: item,
+                        ...(spread ? item : {[as]: item}),
                         ...childProps
                     })
         ) as any;

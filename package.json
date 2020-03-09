@@ -1,6 +1,6 @@
 {
   "name": "react-control-flow-components",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Control flow components for React",
   "main": "dist/index.js",
   "browser": "dist/index.js",

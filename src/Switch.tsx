@@ -1,24 +1,22 @@
-import * as React from 'react';
-import { StatelessComponent } from 'react';
+import { Children } from 'react';
 
 interface Props {
-    test: any;
-    children: any;
+  test: any;
+  children: any;
 }
 
-const Switch:StatelessComponent<Props> = ( { test, children }) => {
-    const matches = React.Children
-                         .toArray(children)
-                         .filter((child:any) => child.props.value == test);
-    if (matches.length === 0) {
-        return null;
-    }
+export default function Switch({ test, children }: Props) {
+  const matches = Children
+    .toArray(children)
+    .filter((child: any) => child.props.value == test);
 
-    if (matches.length > 1) {
-        console.error(`<Switch /> statement matched multiple children: ${test}`);
-    }
+  if (matches.length === 0) {
+    return null;
+  }
 
-    return matches[0] as any;
+  if (matches.length > 1) {
+    console.error(`<Switch /> statement matched multiple children: ${ test }`);
+  }
+
+  return matches[ 0 ];
 };
-
-export default Switch;

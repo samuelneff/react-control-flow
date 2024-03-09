@@ -1,4 +1,5 @@
 import { renderToStaticMarkup } from 'react-dom/server';
+import { expect, test } from '@jest/globals';
 
 /**
  * Given a React component, renders it and checks it against expected html output
@@ -7,11 +8,11 @@ import { renderToStaticMarkup } from 'react-dom/server';
  * @param expected
  */
 export function testHtml(message:string, component:any, expected:string) {
-    test(
-        message,
-        () =>
-            {
-                const actual = renderToStaticMarkup(component);
-                expect(actual).toEqual(expected);
-            });
+  test(
+    message,
+    () => {
+      const actual = renderToStaticMarkup(component);
+      expect(actual).toEqual(expected);
+    }
+  );
 }

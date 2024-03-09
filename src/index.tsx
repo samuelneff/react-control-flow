@@ -4,8 +4,8 @@ import If from './If';
 import Switch from './Switch';
 
 export {
-    Case,
-    ForEach,
-    If,
-    Switch
-}
+  Case,
+  ForEach,
+  If,
+  Switch
+};

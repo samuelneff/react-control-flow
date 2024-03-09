@@ -1,170 +1,171 @@
 import * as React from 'react';
 import { testHtml } from './test-util';
 import { If } from '../src';
+import { describe } from '@jest/globals';
 
 // for testing, we need a reference that allows us to violate the Props contract
-const IfAny:any = If;
+const IfAny: any = If;
 
 describe('<If />', () => {
 
-    testHtml(
-        'empty',
+  testHtml(
+    'empty',
 
-        (
-            <IfAny />
-        ),
+    (
+      <IfAny />
+    ),
 
-        '');
-
-
-    testHtml(
-
-        'empty positive',
-
-        (
-            <IfAny test={ true } />
-        ),
-
-        '');
+    '');
 
 
-    testHtml(
+  testHtml(
 
-        'empty negative',
+    'empty positive',
 
-        (
-            <IfAny test={ false } />
-        ),
+    (
+      <IfAny test={true} />
+    ),
 
-        '');
-
-
-    testHtml(
-
-        'string positive',
-
-        (
-            <If test={true}>
-                This is some text
-            </If>
-        ),
-
-        'This is some text');
+    '');
 
 
-    testHtml(
+  testHtml(
 
-        'string negative',
+    'empty negative',
 
-        (
-            <If test={false}>
-                This is some text
-            </If>
-        ),
+    (
+      <IfAny test={false} />
+    ),
 
-        '');
+    '');
 
 
-    testHtml(
+  testHtml(
 
-        'number positive',
+    'string positive',
 
-        (
-            <If test={true}>
-                10
-            </If>
-        ),
+    (
+      <If test={true}>
+        This is some text
+      </If>
+    ),
 
-        '10');
-
-
-    testHtml(
-
-        'html positive',
-
-        (
-            <If test={true}>
-                <span>This is some html</span>
-            </If>
-        ),
-
-        '<span>This is some html</span>');
+    'This is some text');
 
 
-    testHtml(
+  testHtml(
 
-        'html in and out positive',
+    'string negative',
 
-        (
-            <div>
-                <If test={true}>
-                    <span>This is some html</span>
-                </If>
-            </div>
-        ),
+    (
+      <If test={false}>
+        This is some text
+      </If>
+    ),
 
-        '<div><span>This is some html</span></div>');
+    '');
 
 
-    testHtml(
+  testHtml(
 
-        'html in and out negative',
+    'number positive',
 
-        (
-            <div>
-                <If test={ false }>
-                    <span>This is some html</span>
-                </If>
-            </div>
-        ),
+    (
+      <If test={true}>
+        10
+      </If>
+    ),
 
-        '<div></div>');
+    '10');
 
 
-    testHtml(
+  testHtml(
 
-        'multiple nodes positive',
+    'html positive',
 
-        (
-            <If test={true}>
-                <span>This is one</span>
-                <span>This is two</span>
-            </If>
-        ),
+    (
+      <If test={true}>
+        <span>This is some html</span>
+      </If>
+    ),
 
-        '<span>This is one</span><span>This is two</span>');
-
-
-    testHtml(
-
-        'array positive',
-
-        (
-            <If test={true}>
-                {
-                    [
-                        <span key="1">This is one</span>,
-                        <span key="2">This is two</span>
-                    ]
-                }
-            </If>
-        ),
-
-        '<span>This is one</span><span>This is two</span>');
+    '<span>This is some html</span>');
 
 
-    testHtml(
+  testHtml(
 
-        'fragment positive',
+    'html in and out positive',
 
-        (
-            <If test={true}>
-                <>
-                        <span>This is a</span>
-                        <span>This is b</span>
-                </>
-            </If>
-        ),
+    (
+      <div>
+        <If test={true}>
+          <span>This is some html</span>
+        </If>
+      </div>
+    ),
 
-        '<span>This is a</span><span>This is b</span>');
+    '<div><span>This is some html</span></div>');
+
+
+  testHtml(
+
+    'html in and out negative',
+
+    (
+      <div>
+        <If test={false}>
+          <span>This is some html</span>
+        </If>
+      </div>
+    ),
+
+    '<div></div>');
+
+
+  testHtml(
+
+    'multiple nodes positive',
+
+    (
+      <If test={true}>
+        <span>This is one</span>
+        <span>This is two</span>
+      </If>
+    ),
+
+    '<span>This is one</span><span>This is two</span>');
+
+
+  testHtml(
+
+    'array positive',
+
+    (
+      <If test={true}>
+        {
+          [
+            <span key="1">This is one</span>,
+            <span key="2">This is two</span>
+          ]
+        }
+      </If>
+    ),
+
+    '<span>This is one</span><span>This is two</span>');
+
+
+  testHtml(
+
+    'fragment positive',
+
+    (
+      <If test={true}>
+        <>
+          <span>This is a</span>
+          <span>This is b</span>
+        </>
+      </If>
+    ),
+
+    '<span>This is a</span><span>This is b</span>');
 });

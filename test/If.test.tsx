@@ -104,7 +104,8 @@ describe('<If />', () => {
       </div>
     ),
 
-    '<div><span>This is some html</span></div>');
+    '<div><span>This is some html</span></div>'
+  );
 
 
   testHtml(
@@ -167,5 +168,58 @@ describe('<If />', () => {
       </If>
     ),
 
-    '<span>This is a</span><span>This is b</span>');
+    '<span>This is a</span><span>This is b</span>'
+  );
+
+  testHtml(
+
+    'string true test',
+
+    (
+      <If test={'false'}>
+        Yes
+      </If>
+    ),
+
+    'Yes'
+  );
+
+  testHtml(
+
+    'empty string test',
+
+    (
+      <If test={''}>
+        Yes
+      </If>
+    ),
+
+    ''
+  );
+
+  testHtml(
+
+    'undefined test',
+
+    (
+      <If test={undefined}>
+        Oops
+      </If>
+    ),
+
+    ''
+  );
+
+  testHtml(
+
+    'null test',
+
+    (
+      <If test={null}>
+        Oops
+      </If>
+    ),
+
+    ''
+  );
 });

@@ -1,6 +1,6 @@
 
 interface Props {
-  test: boolean;
+  test: unknown;
   children: any;
 }
 
